@@ -21,15 +21,17 @@ internal class FajlKezelo
     public static List<Konyv> KonyvekBetoltese()
     {
         List<Konyv> konyvek = new List<Konyv>();
-        if (File.Exists(konyvFajl)) return konyvek;
-
-        foreach (var sor in File.ReadLines(konyvFajl))
+        if (File.Exists(konyvFajl))
         {
-            var adatok = sor.Split(';');
-            var konyv = new Konyv(adatok[0], adatok[1], adatok[2]);
-            konyvek.Add(konyv);
+            foreach (var sor in File.ReadLines(konyvFajl))
+            {
+                var adatok = sor.Split(';');
+                var konyv = new Konyv(adatok[0], adatok[1], adatok[2]);
+                konyvek.Add(konyv);
+            }
         }
-        
+
+        Console.WriteLine(konyvek);
         Console.WriteLine("Könyvek betöltve!");
         return konyvek;
     }
