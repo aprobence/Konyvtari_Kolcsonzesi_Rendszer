@@ -2,7 +2,7 @@ namespace Konyvtari_Kolcsonzesi_Rendszer;
 
 internal class Konyvtar
 {
-    public List<Konyv> Konyvek { get; private set; }
+    public List<Konyv> Konyvek { get; set; }
 
     public Konyvtar()
     {
